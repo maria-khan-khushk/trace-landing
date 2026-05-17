@@ -38,7 +38,7 @@ export default function StoryTimeline() {
 
         <div className="relative">
           {/* Animated Line */}
-          <div className="absolute left-[23px] top-0 bottom-0 w-[2px] bg-white/5">
+          <div className="absolute left-[23px] top-0 bottom-0 w-[2px] bg-border">
             <motion.div 
               style={{ height: lineHeight }}
               className="w-full bg-jade-500 box-glow"
@@ -58,11 +58,11 @@ export default function StoryTimeline() {
                 {/* Dot */}
                 <div className="absolute left-[15px] top-[6px] w-[18px] h-[18px] rounded-full bg-bg border-4 border-jade-500 box-glow" />
                 
-                <h3 className="font-mono text-5xl font-bold text-white/5 absolute left-16 md:left-24 -top-8 select-none pointer-events-none">
+                <h3 className="font-mono text-5xl font-bold text-fg/5 absolute left-16 md:left-24 -top-8 select-none pointer-events-none">
                   {step.num}
                 </h3>
                 
-                <div className="relative z-10 bg-bg-card p-8 rounded-2xl border border-white/5 hover:border-jade-500/20 transition-colors">
+                <div className="relative z-10 bg-bg-card p-8 rounded-2xl border border-border hover:border-jade-500/20 transition-colors">
                   <h4 className="text-xl font-bold mb-3">{step.title}</h4>
                   <p className="text-fg-muted leading-relaxed">
                     {step.desc}

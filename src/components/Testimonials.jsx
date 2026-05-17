@@ -22,7 +22,7 @@ export default function Testimonials() {
         {[...reviews, ...reviews].map((review, i) => (
           <div 
             key={i}
-            className="w-[300px] md:w-[400px] p-6 bg-bg-card rounded-2xl border border-white/5 flex-shrink-0"
+            className="w-[300px] md:w-[400px] p-6 bg-bg-card rounded-2xl border border-border flex-shrink-0"
           >
             <p className="text-fg-muted mb-6 leading-relaxed">"{review.text}"</p>
             <div className="flex items-center gap-3">
