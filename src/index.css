@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bg text-fg font-sans antialiased overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+  }
+  .box-glow {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.15);
+  }
+}
+
+/* Custom Scrollbar for non-lenis browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: theme('colors.bg.DEFAULT');
+}
+::-webkit-scrollbar-thumb {
+  background: theme('colors.bg.card');
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.jade.500');
+}
