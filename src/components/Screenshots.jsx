@@ -4,29 +4,29 @@ import { ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react'
 
 // Import Screenshots
 import screen1 from '../assets/screens/screen1.jpeg'
-import screen2 from '../assets/screens/screen2.jpeg'
-import screen3 from '../assets/screens/screen3.jpeg'
-import screen4 from '../assets/screens/screen4.jpeg'
-import screen5 from '../assets/screens/screen5.jpeg'
+import screen2 from '../assets/screens/screen2.png'
+import screen3 from '../assets/screens/screen3.png'
+import screen4 from '../assets/screens/screen4.png'
+import screen5 from '../assets/screens/screen5.png'
 import screen6 from '../assets/screens/screen6.jpeg'
-import screen7 from '../assets/screens/screen7.jpeg'
-import screen8 from '../assets/screens/screen8.jpeg'
+import screen7 from '../assets/screens/screen7.png'
+import screen8 from '../assets/screens/screen8.png'
 
 const screens = [
   { id: 1, img: screen1, title: 'Welcome & Login', desc: 'Secure email & Google sign-in gateway tailored for Bahria University students.' },
   { id: 2, img: screen2, title: 'Lost & Found Feed', desc: 'Explore recently reported lost and found items on campus in real-time.' },
   { id: 3, img: screen3, title: 'Report Lost Item', desc: 'Easily log a lost item with details, category, and precise campus location.' },
-  { id: 4, img: screen4, title: 'AI Matching Hub', desc: 'Advanced AI instantly matches reported items based on visual tags & features.' },
+  { id: 4, img: screen6, title: 'AI Matching Hub', desc: 'Advanced AI instantly matches reported items based on visual tags & features.' },
   { id: 5, img: screen5, title: 'Active Listings', desc: 'Manage your reported items, track match statuses, and verify claims.' },
-  { id: 6, img: screen6, title: 'Secure QR Handover', desc: 'Verify the true owner instantly via dynamically generated secure QR codes.' },
+  { id: 6, img: screen4, title: 'Secure QR Handover', desc: 'Verify the true owner instantly via dynamically generated secure QR codes.' },
   { id: 7, img: screen7, title: 'User Profile & Logs', desc: 'Access your history, active claims, and comprehensive lost/found logs.' },
-  { id: 8, img: screen8, title: 'Admin Analytics', desc: 'Campus administrators monitor logs, resolve disputes, and analyze analytics.' },
+  { id: 8, img: screen8, title: 'Settings', desc: 'Settings where usercs can control their notifications and app preferences.' },
 ]
 
 export default function Screenshots() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [activeImage, setActiveImage] = useState(null) // Lightbox modal state
-  
+
   const carouselRef = useRef(null)
 
   const handlePrev = () => {
@@ -60,22 +60,20 @@ export default function Screenshots() {
           <button
             onClick={handlePrev}
             disabled={currentIndex === 0}
-            className={`w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 ${
-              currentIndex === 0
-                ? 'border-border text-fg-muted/30 cursor-not-allowed'
-                : 'border-border bg-bg-card text-fg hover:border-jade-500 hover:text-jade-400 box-glow active:scale-95'
-            }`}
+            className={`w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 ${currentIndex === 0
+              ? 'border-border text-fg-muted/30 cursor-not-allowed'
+              : 'border-border bg-bg-card text-fg hover:border-jade-500 hover:text-jade-400 box-glow active:scale-95'
+              }`}
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button
             onClick={handleNext}
             disabled={currentIndex === screens.length - 1}
-            className={`w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 ${
-              currentIndex === screens.length - 1
-                ? 'border-border text-fg-muted/30 cursor-not-allowed'
-                : 'border-border bg-bg-card text-fg hover:border-jade-500 hover:text-jade-400 box-glow active:scale-95'
-            }`}
+            className={`w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300 ${currentIndex === screens.length - 1
+              ? 'border-border text-fg-muted/30 cursor-not-allowed'
+              : 'border-border bg-bg-card text-fg hover:border-jade-500 hover:text-jade-400 box-glow active:scale-95'
+              }`}
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -96,26 +94,25 @@ export default function Screenshots() {
                 <motion.div
                   key={screen.id}
                   onClick={() => setCurrentIndex(i)}
-                  animate={{ 
+                  animate={{
                     scale: isActive ? 1 : 0.95,
                     opacity: isActive ? 1 : 0.6
                   }}
                   transition={{ duration: 0.4 }}
-                  className={`relative flex-shrink-0 w-[300px] aspect-[9/19] rounded-[2rem] border overflow-hidden bg-bg-card transition-all duration-400 box-glow ${
-                    isActive ? 'border-jade-500/50 shadow-[0_0_30px_rgba(16,185,129,0.15)]' : 'border-border hover:border-jade-500/20'
-                  }`}
+                  className={`relative flex-shrink-0 w-[300px] aspect-[9/19] rounded-[2rem] border overflow-hidden bg-bg-card transition-all duration-400 box-glow ${isActive ? 'border-jade-500/50 shadow-[0_0_30px_rgba(16,185,129,0.15)]' : 'border-border hover:border-jade-500/20'
+                    }`}
                 >
-                  <img 
-                    src={screen.img} 
+                  <img
+                    src={screen.img}
                     alt={screen.title}
-                    className="w-full h-full object-cover select-none" 
+                    className="w-full h-full object-cover select-none"
                   />
 
                   {/* Dark Vignette overlay (important for reading white text in light mode too) */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent opacity-90 pointer-events-none" />
 
                   {/* Zoom Overlay on Hover */}
-                  <div 
+                  <div
                     onClick={(e) => {
                       e.stopPropagation()
                       setActiveImage(screen.img)
@@ -146,9 +143,8 @@ export default function Screenshots() {
             <button
               key={i}
               onClick={() => setCurrentIndex(i)}
-              className={`h-2.5 rounded-full transition-all duration-500 ${
-                i === currentIndex ? 'w-8 bg-jade-500 box-glow' : 'w-2.5 bg-fg-muted/20 hover:bg-fg-muted/40'
-              }`}
+              className={`h-2.5 rounded-full transition-all duration-500 ${i === currentIndex ? 'w-8 bg-jade-500 box-glow' : 'w-2.5 bg-fg-muted/20 hover:bg-fg-muted/40'
+                }`}
             />
           ))}
         </div>
@@ -172,9 +168,9 @@ export default function Screenshots() {
               className="relative max-h-[85vh] max-w-[90vw] aspect-[9/19] rounded-[2rem] border border-white/10 overflow-hidden box-glow"
               onClick={(e) => e.stopPropagation()}
             >
-              <img 
-                src={activeImage} 
-                alt="App Screenshot Zoomed" 
+              <img
+                src={activeImage}
+                alt="App Screenshot Zoomed"
                 className="w-full h-full object-contain"
               />
             </motion.div>
