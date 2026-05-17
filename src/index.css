@@ -1,20 +1,67 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  body {
-    @apply bg-bg text-fg font-sans antialiased overflow-x-hidden;
-  }
+@theme {
+  --color-jade-50: #ecfdf5;
+  --color-jade-100: #d1fae5;
+  --color-jade-200: #a7f3d0;
+  --color-jade-300: #6ee7b7;
+  --color-jade-400: #34d399;
+  --color-jade-500: #10b981;
+  --color-jade-600: #059669;
+  --color-jade-700: #047857;
+  --color-jade-800: #065f46;
+  --color-jade-900: #064e3b;
+  --color-jade-950: #022c22;
+
+  --color-bg: var(--bg);
+  --color-bg-card: var(--bg-card);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-border: var(--border-color);
+
+  --font-sans: 'Outfit', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  --background-image-hero-glow: radial-gradient(ellipse, var(--jade-glow) 0%, transparent 65%);
+  --background-image-grid-pattern: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
 }
 
-@layer utilities {
-  .text-glow {
-    text-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
-  }
-  .box-glow {
-    box-shadow: 0 0 30px rgba(16, 185, 129, 0.15);
-  }
+:root {
+  /* Default Dark Mode colors */
+  --bg: #080c0a;
+  --bg-card: #111915;
+  --fg: #f0f5f2;
+  --fg-muted: #8a9e94;
+  --border-color: rgba(255, 255, 255, 0.07);
+  --grid-line: rgba(255, 255, 255, 0.05);
+  --jade-glow: rgba(16, 185, 129, 0.15);
+}
+
+:root.light {
+  /* Light Mode colors */
+  --bg: #f4f8f6;
+  --bg-card: #ffffff;
+  --fg: #0a1410;
+  --fg-muted: #4a6558;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --grid-line: rgba(0, 0, 0, 0.03);
+  --jade-glow: rgba(5, 150, 105, 0.1);
+}
+
+@utility text-glow {
+  text-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+}
+
+@utility box-glow {
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.15);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* Custom Scrollbar for non-lenis browsers */
@@ -22,12 +69,12 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: theme('colors.bg.DEFAULT');
+  background: var(--color-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: theme('colors.bg.card');
+  background: var(--color-bg-card);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: theme('colors.jade.500');
+  background: var(--color-jade-500);
 }
