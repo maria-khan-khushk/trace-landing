@@ -57,7 +57,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           className="flex flex-wrap justify-center gap-4"
         >
-          <a href="https://github.com/UmerCodes19/Trace/releases/download/v1.0.0/Trace.apk" download className="group relative px-8 py-4 bg-jade-500 text-bg-card font-bold rounded-xl overflow-hidden box-glow hover:scale-105 active:scale-95 transition-all duration-300">
+          <a href="/trace-app.apk" download className="group relative px-8 py-4 bg-jade-500 text-bg-card font-bold rounded-xl overflow-hidden box-glow hover:scale-105 active:scale-95 transition-all duration-300">
             <span className="relative z-10 flex items-center gap-2">
               Download App
             </span>
