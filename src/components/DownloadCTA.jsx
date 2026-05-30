@@ -35,7 +35,7 @@ export default function DownloadCTA() {
           <a href="https://trace-app-xi.vercel.app" target="_blank" rel="noreferrer" className="w-full sm:w-auto px-8 py-4 bg-jade-500 text-bg-card font-bold rounded-xl hover:scale-105 active:scale-95 transition-all duration-300 box-glow text-center">
             Launch Web App
           </a>
-          <a href="/trace-app.apk" download className="w-full sm:w-auto px-8 py-4 bg-bg-card border border-border text-fg font-bold rounded-xl hover:border-jade-500/50 hover:text-jade-400 hover:scale-105 active:scale-95 transition-all duration-300 text-center">
+          <a href="/Trace.apk" download className="w-full sm:w-auto px-8 py-4 bg-bg-card border border-border text-fg font-bold rounded-xl hover:border-jade-500/50 hover:text-jade-400 hover:scale-105 active:scale-95 transition-all duration-300 text-center">
             Download Android APK
           </a>
         </motion.div>
