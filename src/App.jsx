@@ -79,7 +79,7 @@ function App() {
             )}
           </button>
 
-          <a href="/trace-app.apk" download className="px-5 py-2.5 bg-jade-500 hover:bg-jade-400 text-bg-card font-bold rounded-lg text-sm transition-all duration-300 box-glow hover:scale-105 active:scale-95">
+          <a href="/Trace.apk" download className="px-5 py-2.5 bg-jade-500 hover:bg-jade-400 text-bg-card font-bold rounded-lg text-sm transition-all duration-300 box-glow hover:scale-105 active:scale-95">
             Download App
           </a>
         </div>
